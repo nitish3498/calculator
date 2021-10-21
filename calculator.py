@@ -6,11 +6,15 @@ def click(a):
 def calculate():
     global b
     input_from_box=input.get()
+    try:
     output_ = eval(str(input_from_box))
     input.delete(0,END)
     b=str(output_)
     input.insert(END,b)
-
+    except:
+        b = 'cannot divide by zero'
+        input.insert(END,b)
+        
 def delete():
     input.delete(0,END)
 
