@@ -6,11 +6,13 @@ def click(a):
 def calculate():
     global b
     input_from_box=input.get()
-    output_ = eval(str(input_from_box))
-    input.delete(0,END)
-    b=str(output_)
-    input.insert(END,b)
-
+    try:output_ = eval(str(input_from_box))
+        input.delete(0,END)
+        b=str(output_)
+        input.insert(END,b)
+    except ZeroDivisionError:
+        b = str('Cannot divide zero')
+        input.insert(END,b)
 def delete():
     input.delete(0,END)
 
